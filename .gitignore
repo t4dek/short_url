@@ -11,3 +11,9 @@
 /log/*
 !/log/.keep
 /tmp
+
+# Ignore documentation
+/rdoc
+
+# Ignore database configuration
+/config/database.yml

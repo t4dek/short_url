@@ -1,6 +1,6 @@
 class Link < ActiveRecord::Base
   validates_format_of :given_url, with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}/
-    
+  
   CHARSET = ('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a.map(&:to_s)
     
   before_create :_set_uniq_key

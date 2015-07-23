@@ -1,2 +1,5 @@
 development:
   BASE_URL: 'lvh.me:3000'
+
+test:
+  BASE_URL: 'lvh.me:3000'

@@ -5,10 +5,10 @@ class LinksController < ApplicationController
   end
   
   def create
-    @link = Link.new(link_params)
+    @link = Link.find_by(given_url: link_params[:given_url]) || Link.new(link_params)
     respond_to do |format|
       if @link.save
-        format.js { render json: @link }
+        format.js { render json: { short_url: @link.shortened_link }.to_json }
       else
         format.js { render json: @link.errors, status: :unprocessable_entity }
       end

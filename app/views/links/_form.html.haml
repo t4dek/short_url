@@ -1,15 +1,19 @@
-= form_for(@link) do |f|
-  - if @link.errors.any?
-    #error_explanation
-      %h2
-        = pluralize(@link.errors.count, "error")
-        appeared while checking you link:
-      %ul
-        - @link.errors.full_messages.each do |message|
-          %li= message
-  .field
-    = f.label :given_url
-    %br/
-    = f.text_field :given_url
-  .actions
-    = f.submit
+.col-md-3
+.col-md-6
+  %h2.head-text.text-center 
+    Let us make your link 
+    %em shorter
+    !
+  = form_for(@link) do |f|
+    - if @link.errors.any?
+      #error_explanation
+        %h2
+          = pluralize(@link.errors.count, "error")
+          appeared while checking you link:
+        %ul
+          - @link.errors.full_messages.each do |message|
+            %li= message
+    .input-group.styled
+      = f.text_field :given_url, placeholder: 'Enter URL to shrink', class: 'form-control'
+      %span.input-group-btn
+        = f.submit class: 'btn btn-default'

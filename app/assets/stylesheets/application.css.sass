@@ -1,0 +1,72 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+@import "bootstrap-sprockets"
+@import "bootstrap"
+
+.navbar 
+  .container
+    height: 75px
+  .navbar-link
+    padding-top: 25px
+    .navbar-header
+      .navbar-brand
+        padding-bottom: 0px
+body 
+  height: 100%
+  
+html 
+  height: 100%
+
+.vertical-center 
+  min-height: 100%
+  min-height: 100vh
+  display: flex
+  align-items: center
+  width: 100%
+  justify-content: center
+
+.jumbotron.vertical-center 
+  margin-bottom: 0
+
+.jumbotron
+  background-color: white
+  
+.navbar-brand
+  padding: 35px 15px
+  font-size: 25px
+  
+h2.head-text
+  font-size: 40px
+  font-weight: 100
+  letter-spacing: 2px
+  margin-bottom: 35px
+  span
+    color: #47C36A
+    display: inline-block
+    padding-bottom: 20px
+    font-size: 1.4em
+
+.input-group.styled
+  .form-control
+    height: 60px
+    padding: 10px 20px
+    box-shadow: none
+    &[disabled], &[readonly]
+      background-color: #fafafa
+  .input-group-btn
+    .btn 
+      height: 60px
+      min-width: 130px

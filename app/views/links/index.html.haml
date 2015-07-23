@@ -1,4 +1,13 @@
-.row
+.row.whatever
   =render 'form'
-.shortened_link
-  %a
+.row.hidden.shortened_link
+  .col-md-3  
+  .col-md-6
+    %h2.head-text.text-center
+      %span Success
+      %br
+      Your link has been shortened!
+    .input-group.styled
+      %input.form-control{type: 'text', id: 'short_url', disabled: 'disabled'}
+        %span.input-group-btn
+          %button#copy-button.btn.btn-default{'data-clipboard-target' => 'short_url'} Copy!

@@ -9,10 +9,6 @@ RSpec.describe Link, :type => :model do
     expect(link.uniq_key).to_not be_nil
   end
   
-  it 'has right shortened link' do
-    expect(link.shortened_link).to eq(ENV['BASE_URL'] + '/' + link.uniq_key)
-  end
-  
   it 'generates new uniq_key per link' do
     new_link = create(:link)
     expect(new_link.uniq_key).not_to eql(link.uniq_key)

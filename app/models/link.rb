@@ -13,10 +13,6 @@ class Link < ActiveRecord::Base
     new_combination.map{|n| CHARSET[n]}.join
   end
   
-  def shortened_link
-    ENV['BASE_URL'] + '/' + self.uniq_key
-  end
-  
   private 
     def _set_uniq_key
       self.uniq_key = Link.uniq_key

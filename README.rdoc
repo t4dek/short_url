@@ -8,6 +8,4 @@ To run this application You will need:
 
 To set up database configuration take a look at config/database.yml.example
 
-To set up application specific configurations take a look at config/application.yml.example
-
 To run tests, run command == rspec from root directory of project in terminal

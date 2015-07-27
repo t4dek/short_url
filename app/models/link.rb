@@ -22,9 +22,10 @@ class Link < ActiveRecord::Base
     
     def self.increase combination
       changed = false
-      combination << 0 if !combination.any? {|n| n != CHARSET.count - 1}
+      charset_size = CHARSET.count - 1
+      combination << charset_size if !combination.any? {|n| n != charset_size}
       new_comb = combination.reverse.map do |n|
-        if n == CHARSET.count - 1
+        if n == charset_size
           0
         elsif changed
           n

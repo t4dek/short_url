@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Link, :type => :model do
-  subject (:link) { create(:link) }
+  subject (:link) { Link.create(given_url: 'http://example.com/foobar') }
   
   it { should be_valid }
   
@@ -10,7 +10,7 @@ RSpec.describe Link, :type => :model do
   end
   
   it 'generates new uniq_key per link' do
-    new_link = create(:link)
+    new_link = Link.create(given_url: 'http://example.com/foobaz')
     expect(new_link.uniq_key).not_to eql(link.uniq_key)
   end
   

@@ -25,7 +25,7 @@ class Link < ActiveRecord::Base
       charset_size = CHARSET.count - 1
       combination << charset_size if !combination.any? {|n| n != charset_size}
       new_comb = combination.reverse.map do |n|
-        if n == charset_size
+        if n == charset_size && !changed
           0
         elsif changed
           n

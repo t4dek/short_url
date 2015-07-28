@@ -2,8 +2,8 @@ class Link < ActiveRecord::Base
   validates :given_url, format: { with: /(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}/, message: 'Please provide a valid url' },
                         presence: {  message: 'You should enter URL first' }
   
-  CHARSET = (('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a.map(&:to_s)).delete_if do |l|
-      l=='1' || l=='l' || l =='I' || l=='0' || l=='O'
+  CHARSET = (('a'..'z').to_a + ('A'..'Z').to_a + (0..9).to_a.map(&:to_s)).delete_if do |c|
+      c =='1' || c =='l' || c =='I' || c =='0' || c =='O'
     end
     
   before_create :_set_uniq_key
